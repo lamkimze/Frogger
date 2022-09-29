@@ -1,0 +1,246 @@
+<html>
+
+<head>
+  <title>FIT2102 A1 2022</title>
+
+  <style>
+    /* creating frog with its attribute */
+    .frog {
+      fill: greenyellow;
+    }
+
+    /* creating 2 rivers with its attribute */
+    .river1 {
+      background-color: rgb(44, 215, 242);
+      height: 120px;
+      width: 600px;
+      position: absolute;
+      bottom: 550px;
+      background-image: url('river.jpg');
+    }
+
+    .river2 {
+      background-color: rgb(44, 215, 242);
+      height: 120px;
+      width: 600px;
+      position: absolute;
+      bottom: -300px;
+      background-image: url('river.jpg');
+    }
+
+    /* creating road with its attribute */
+    .road {
+      background-color: grey;
+      height: 600;
+      width: 600;
+      position: absolute;
+      bottom: 10;
+      background-image: url('road.jpg');
+    }
+
+    /* creating hidden to hide the shown component */
+    .hidden {
+      visibility: hidden;
+    }
+
+    /* creating 5 targets with its attribute */
+    .target1 {
+      background-color: darkorchid;
+      height: 50;
+      width: 50;
+      position: absolute;
+      bottom: 250;
+      left: 20;
+    }
+
+    .target2 {
+      background-color: darkorchid;
+      height: 50;
+      width: 50;
+      position: absolute;
+      bottom: 300;
+      left: 183;
+    }
+
+    .target3 {
+      background-color: darkorchid;
+      height: 50;
+      width: 50;
+      position: absolute;
+      bottom: 350;
+      left: 530;
+    }
+
+    .target4 {
+      background-color: darkorchid;
+      height: 50;
+      width: 50;
+      position: absolute;
+      bottom: 400;
+      left: 356;
+    }
+
+    .target5 {
+      background-color: darkorchid;
+      height: 50;
+      width: 50;
+      position: absolute;
+      bottom: 400;
+      left: 356;
+    }
+
+    /* creating lotusleaf color */
+    .lotusleaf {
+      fill: #83ed83;
+    }
+
+    /* creating car color */
+    .car {
+      fill: salmon;
+    }
+
+    /* creating woodenPlank color */
+    .woodenPlank {
+      fill: #2e0101;
+    }
+
+    .key {
+      width: 18px;
+      text-align: center;
+      border-radius: 3px;
+      background-color: lightgray;
+    }
+
+    /* creating score track with all its attribute to update the score instantly */
+    .scoreTrack {
+      font-family: Fantasy;
+      font-size: 40px;
+      fill: black;
+    }
+
+    /* creating score with all its attribute to instantly create the highest score*/
+    .score {
+      font-family: sans-serif;
+      font-size: 50px;
+      fill: darkred;
+    }
+
+    /* creating gameover text attributes */
+    .gameover {
+      font-family: sans-serif;
+      font-size: 50px;
+      fill: darkred;
+    }
+
+    /* creating control table's attributes */
+    div#controls {
+      float: right;
+      margin: 50 px;
+    }
+  </style>
+  <script defer src="main.js"></script>
+  <script defer src="main.js"></script>
+  <script defer src="main.js"></script>
+  <script defer src="main.js"></script>
+  <script defer src="main.js"></script>
+  <script defer src="main.js"></script>
+  <script defer src="main.js"></script>
+<script defer src="main.js"></script></head>
+
+<body>
+  <h1>Frogger</h1>
+  <!-- creating game map -->
+  <svg id="svgCanvas" width="600" height="780" style="background-color: grey">
+    <!-- creating frog -->
+    <g id="frog" transform="translate(300, 700)">
+      <polygon points="-15,20 15,20 0,-20" style="fill: darkgreen">
+      </polygon>
+    </g>
+    <!-- creating rivers -->
+    <g id="river1" transform="translate(0,480)">
+      <rect width="600" height="145" style="fill:aqua">
+      </rect>>
+    </g>
+    <g id="river2" transform="translate(0,172)">
+      <rect width="600" height="100" style="fill:aqua">
+      </rect>>
+      <!-- creating targets -->
+    </g>
+    <g id="target1" transform="translate(35,25)">
+      <rect width="50" height="50" style="fill: rgb(64, 0, 202)">
+      </rect>>
+    </g>
+    <g id="target2" transform="translate(155,25)">
+      <rect width="50" height="50" style="fill: rgb(64, 0, 202)">
+      </rect>>
+    </g>
+    <g id="target3" transform="translate(275,25)">
+      <rect width="50" height="50" style="fill: rgb(64, 0, 202)">
+      </rect>>
+    </g>
+    <g id="target4" transform="translate(395,25)">
+      <rect width="50" height="50" style="fill: rgb(64, 0, 202)">
+      </rect>>
+    </g>
+    <g id="target5" transform="translate(515,25)">
+      <rect width="50" height="50" style="fill: rgb(64, 0, 202)">
+      </rect>>
+      <!-- creating targets fill  -->
+    </g>
+    <polygon class="targetfill1 hidden" id="targetfill1" points="-15,20 15,20 0,-20" transform="translate(60, 50)"
+      style="fill: #4dc100">
+    </polygon>
+    <polygon class="targetfill2 hidden" id="targetfill2" points="-15,20 15,20 0,-20" transform="translate(180, 50)"
+      style="fill: #4dc100">
+    </polygon>
+    <polygon class="targetfill3 hidden" id="targetfill3" points="-15,20 15,20 0,-20" transform="translate(300, 50)"
+      style="fill: #4dc100">
+    </polygon>
+    <polygon class="targetfill4 hidden" id="targetfill4" points="-15,20 15,20 0,-20" transform="translate(420, 50)"
+      style="fill: #4dc100">
+    </polygon>
+    <polygon class="targetfill5 hidden" id="targetfill5" points="-15,20 15,20 0,-20" transform="translate(540,50)"
+      style="fill: #4dc100">
+    </polygon>
+  </svg>
+
+  <!-- creating arrow function table -->
+  <div id="controls">
+    <h2>Controls:</h2>
+    <table>
+      <tr>
+        <td>Turn Left</td>
+        <td>
+          <div id="ArrowLeft" class="key">&#8678;</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Turn Right</td>
+        <td>
+          <div id="ArrowRight" class="key">&#8680;</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Jump Forward</td>
+        <td>
+          <div id="ArrowUp" class="key">&#8679;</div>
+      <tr>
+      </tr>
+      <tr>
+        <td>Jump Backward</td>
+        <td>
+          <div id="ArrowDown" class="key">&#8681;</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Restart Game</td>
+        <td>
+          <div id="spacebar" class="key">&#9251;</div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  </div>
+</body>
+
+</html>
